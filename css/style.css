@@ -1,0 +1,10 @@
+#geral
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:"Playfair" sans-serif;  
+}
+body{
+    background: linear-gradient(180deg, #594cee 0%, #8dd0f5 100%);
+
+}
