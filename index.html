@@ -6,16 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima Hoje!</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js" defer></script>
 
+    <!-- Fontes e ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+
+    
+    <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
@@ -25,31 +33,35 @@
             <div class="form-input-container">
                 <input type="text" placeholder="Digite o nome da cidade que deseja consulta" id="city-input">
                 <button id="search">
-                    <i class="fa-solid fa-magnifying-glass">
-
-                    </i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
         </div>
+        <hr class="hide-before-search">
         <div id="weather-data" class="hide">
-            <h2><i class="fa-solid fa-location-dot"></i>
-                <span id="city"></span>
-                <img src="https://flagsapi.com/BR/flat/64.png" alt="BANDEIRAS PAISES" id="country">
-            </h2>
-            <p id="temperature"><span></span>&deg;C</p>
-            <div id="description_container">
-                <p id="description"></p>
-                <img src="http://openweathermap.org/img/wn/01d.png" alt="CONDIÇÃO DO TEMPO" id="weather-icon">
+            <div id="map-container">
+                <div id="map"></div>
             </div>
-            <div id="details-container">
-                <p id="humidity">
-                    <i class="fa-solid fa-droplet"></i>
-                    <span></span>
-                </p>
-                <p id="wind">
-                    <i class="fa-solid fa-wind"></i>
-                    <span></span>
-                </p>
+            <div id="weather-info">
+                <h2><i class="fa-solid fa-location-dot"></i>
+                    <span id="city"></span>
+                    <img src="https://flagsapi.com/BR/flat/64.png" alt="BANDEIRAS PAISES" id="country">
+                </h2>
+                <p id="temperature"><span></span>&deg;C</p>
+                <div id="description_container">
+                    <p id="description"></p>
+                    <img src="http://openweathermap.org/img/wn/01d.png" alt="CONDIÇÃO DO TEMPO" id="weather-icon">
+                </div>
+                <div id="details-container">
+                    <p id="humidity">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span></span>
+                    </p>
+                    <p id="wind">
+                        <i class="fa-solid fa-wind"></i>
+                        <span></span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
